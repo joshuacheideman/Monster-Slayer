@@ -1,0 +1,13 @@
+.margin{
+	margin-top:2%;
+	margin-left:10%;
+	margin-right:10%;
+}
+.healthbar{
+	background-color:lawngreen;
+	width:200px;
+	height:25px;
+}
+.white{
+	color:white;
+}

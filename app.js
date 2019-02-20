@@ -2,7 +2,9 @@ new Vue({
 	el: "#app",
 	data:
 	{
-		GameStart:false
+		GameStart:false,
+		PlayerHealth:100,
+		EnemyHealth:100,
 	},
 	methods:{
 		StartGame: function(){
