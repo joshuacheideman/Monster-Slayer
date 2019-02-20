@@ -23,7 +23,7 @@
 				</div>
 				<div>
 					<h1 class="text-center">Enemy</h1>
-					<div class="healthbar white text-center">
+					<div class="healthbar white text-center" :style="{width: EnemyBar}">
 						{{EnemyHealth}}
 					</div>
 					<div class="healthbar-depleted">
@@ -33,8 +33,8 @@
 			</div>
 			<div class="d-flex justify-content-center">
 				<button type="button" class="btn btn-primary" v-if="!GameStart" @click="StartGame">Start Game</button>
-				<button type="button" class="m-2 btn btn-primary" v-if="GameStart">Attack</button>
-				<button type="button" class="m-2 btn btn-secondary" v-if="GameStart"> Special Attack</button>
+				<button type="button" class="m-2 btn btn-primary" v-if="GameStart" @click="Attack">Attack</button>
+				<button type="button" class="m-2 btn btn-secondary" v-if="GameStart" @click="SpecialAttack"> Special Attack</button>
 				<button type="button" class="m-2 btn btn-success" v-if="GameStart">Heal</button>
 				<button type="button" class="m-2 btn btn-light" v-if="GameStart" @click="Reset">Reset Battle</button>
 			</div>
