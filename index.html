@@ -31,17 +31,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="d-flex justify-content-center">
-				<button type="button" class="btn btn-primary" v-if="!GameStart" @click="StartGame">Start Game</button>
-				<button type="button" class="m-2 btn btn-primary" v-if="GameStart" @click="Attack">Attack</button>
-				<button type="button" class="m-2 btn btn-secondary" v-if="GameStart" @click="SpecialAttack"> Special Attack</button>
-				<button type="button" class="m-2 btn btn-success" v-if="GameStart" @click="Heal">Heal</button>
-				<button type="button" class="m-2 btn btn-light" v-if="GameStart" @click="Reset">Reset Battle</button>
+			<div class="d-flex justify-content-center boxshadow verticalmargin">
+				<button type="button" class="btn btn-outline-primary" v-if="!GameStart" @click="StartGame">Start Game</button>
+				<button type="button" class="m-2 btn btn-outline-primary" v-if="GameStart" @click="Attack">Attack</button>
+				<button type="button" class="m-2 btn btn-outline-warning" v-if="GameStart" @click="SpecialAttack"> Special Attack</button>
+				<button type="button" class="m-2 btn btn-outline-success" v-if="GameStart" @click="Heal">Heal</button>
+				<button type="button" class="m-2 btn btn-outline-dark" v-if="GameStart" @click="Reset">Reset Battle</button>
 			</div>
-			<div>
+			<div v-if="GameStart" class="d-flex justify-content-center boxshadow verticalmargin">
 				<ul style="list-style-type:none">
-					<li v-for="message in GameLog">
-						{{message}}
+					<li v-for="log in GameLog" :class="{playerlog:log.isPlayer,enemylog:!log.isPlayer}">
+						{{log.message}}
 					</li>
 				</ul>
 			</div>

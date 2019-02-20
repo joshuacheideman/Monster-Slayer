@@ -14,6 +14,23 @@
 	width:200px;
 	height:25px;
 }
+.boxshadow {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+.verticalmargin{
+	margin-top: 2%;
+	margin-bottom:2%;
+}
 .white{
 	color:white;
+}
+.enemylog{
+	background-color:salmon;
+	color:red;
+}
+.playerlog{
+	background-color:aquamarine;
+	color:blue;
 }
