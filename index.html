@@ -13,15 +13,21 @@
 		<div id="app">
 			<div class="d-flex justify-content-around">
 				<div>
-					<h1>Player</h1>
+					<h1 class="text-center">Player</h1>
 					<div class="healthbar white text-center">
 						{{PlayerHealth}}
 					</div>
+					<div class="healthbar-depleted">
+						
+					</div>
 				</div>
 				<div>
-					<h1>Enemy</h1>
+					<h1 class="text-center">Enemy</h1>
 					<div class="healthbar white text-center">
 						{{EnemyHealth}}
+					</div>
+					<div class="healthbar-depleted">
+						
 					</div>
 				</div>
 			</div>
@@ -30,7 +36,7 @@
 				<button type="button" class="m-2 btn btn-primary" v-if="GameStart">Attack</button>
 				<button type="button" class="m-2 btn btn-secondary" v-if="GameStart"> Special Attack</button>
 				<button type="button" class="m-2 btn btn-success" v-if="GameStart">Heal</button>
-				<button type="button" class="m-2 btn btn-light" v-if="GameStart">Reset Battle</button>
+				<button type="button" class="m-2 btn btn-light" v-if="GameStart" @click="Reset">Reset Battle</button>
 			</div>
 		</div>
 	</body>

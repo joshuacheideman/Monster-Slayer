@@ -7,6 +7,12 @@
 	background-color:lawngreen;
 	width:200px;
 	height:25px;
+	position:absolute;
+}
+.healthbar-depleted{
+	background-color:whitesmoke;
+	width:200px;
+	height:25px;
 }
 .white{
 	color:white;

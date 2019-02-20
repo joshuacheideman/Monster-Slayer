@@ -8,7 +8,12 @@ new Vue({
 	},
 	methods:{
 		StartGame: function(){
-			this.GameStart = !this.GameStart;
+			this.GameStart = true;
+		},
+		Reset: function(){
+			this.GameStart = false;
+			this.PlayerHealth = 100;
+			this.EnemyHealth = 100;
 		}
 	}
 })
