@@ -24,6 +24,10 @@ new Vue({
 		Attack: function(){
 			const attack_val = Math.floor(Math.random()*10)+1;//Range 1 to 10
 			this.EnemyHealth = this.EnemyHealth - attack_val;
+			if(this.Win())
+			{
+				return;
+			}
 			this.EnemyBar = this.EnemyHealth*2 + "px";
 			const logObj = {message:"PLAYER HITS ENEMY FOR "+ attack_val +" DAMAGE",isPlayer:true};
 			this.GameLog.unshift(logObj);
@@ -32,6 +36,8 @@ new Vue({
 		SpecialAttack: function(){
 			const attack_val = Math.floor(Math.random()*10)+11;//Range 11 to 20
 			this.EnemyHealth = this.EnemyHealth - attack_val;
+			if(this.Win())
+				return;
 			this.EnemyBar = this.EnemyHealth*2 + "px";
 			const logObj = {message:"PLAYER HITS ENEMY FOR "+ attack_val +" DAMAGE",isPlayer:true};
 			this.GameLog.unshift(logObj);
@@ -49,8 +55,22 @@ new Vue({
 			const attack_val = Math.floor(Math.random()*20)+1;//Range 1 to 20
 			this.PlayerHealth = this.PlayerHealth - attack_val;
 			this.PlayerBar = this.PlayerHealth*2 + "px";
+			if(this.PlayerHealth<=0)
+			{
+				alert("You lost.Let's play again");
+				this.Reset();
+				return;
+			}
 			const logObj = {message:"ENEMY HITS PLAYER FOR "+ attack_val +" DAMAGE",isPlayer:false};
 			this.GameLog.unshift(logObj);
+		},
+		Win: function(){
+			if(this.EnemyHealth<=0)
+			{
+				alert("You won. Let's play again");
+				this.Reset();
+				return true;
+			}
 		}
 	}
 })
