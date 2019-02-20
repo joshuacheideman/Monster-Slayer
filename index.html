@@ -35,7 +35,7 @@
 				<button type="button" class="btn btn-primary" v-if="!GameStart" @click="StartGame">Start Game</button>
 				<button type="button" class="m-2 btn btn-primary" v-if="GameStart" @click="Attack">Attack</button>
 				<button type="button" class="m-2 btn btn-secondary" v-if="GameStart" @click="SpecialAttack"> Special Attack</button>
-				<button type="button" class="m-2 btn btn-success" v-if="GameStart">Heal</button>
+				<button type="button" class="m-2 btn btn-success" v-if="GameStart" @click="Heal">Heal</button>
 				<button type="button" class="m-2 btn btn-light" v-if="GameStart" @click="Reset">Reset Battle</button>
 			</div>
 			<div>

@@ -22,7 +22,7 @@ new Vue({
 			this.GameLog = [];
 		},
 		Attack: function(){
-			const attack_val = Math.floor(Math.random()*10)+1;
+			const attack_val = Math.floor(Math.random()*10)+1;//Range 1 to 10
 			this.EnemyHealth = this.EnemyHealth - attack_val;
 			this.EnemyBar = this.EnemyHealth*2 + "px";
 			const message = "PLAYER HITS ENEMY FOR "+ attack_val +" DAMAGE";
@@ -30,15 +30,23 @@ new Vue({
 			this.EnemyAttack();
 		},
 		SpecialAttack: function(){
-			const attack_val = Math.floor(Math.random()*10)+11;
+			const attack_val = Math.floor(Math.random()*10)+11;//Range 11 to 20
 			this.EnemyHealth = this.EnemyHealth - attack_val;
 			this.EnemyBar = this.EnemyHealth*2 + "px";
 			const message = "PLAYER HITS ENEMY FOR "+ attack_val +" DAMAGE";
 			this.GameLog.unshift(message);
 			this.EnemyAttack();
 		},
+		Heal:function(){
+			const heal_val = Math.floor(Math.random()*6)+15;//Range 15 to 20
+			this.PlayerHealth = this.PlayerHealth+ heal_val > 100 ? 100: this.PlayerHealth + heal_val;
+			this.PlayerBar = this.PlayerHealth*2 + "px";
+			const message = "PLAYER HEALS FOR "+ heal_val;
+			this.GameLog.unshift(message);
+			this.EnemyAttack();
+		},
 		EnemyAttack: function(){
-			const attack_val = Math.floor(Math.random()*20)+1;
+			const attack_val = Math.floor(Math.random()*20)+1;//Range 1 to 20
 			this.PlayerHealth = this.PlayerHealth - attack_val;
 			this.PlayerBar = this.PlayerHealth*2 + "px";
 			const message = "ENEMY HITS PLAYER FOR "+ attack_val +" DAMAGE";
