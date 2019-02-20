@@ -38,6 +38,13 @@
 				<button type="button" class="m-2 btn btn-success" v-if="GameStart">Heal</button>
 				<button type="button" class="m-2 btn btn-light" v-if="GameStart" @click="Reset">Reset Battle</button>
 			</div>
+			<div>
+				<ul style="list-style-type:none">
+					<li v-for="message in GameLog">
+						{{message}}
+					</li>
+				</ul>
+			</div>
 		</div>
 	</body>
 	<script src="./app.js"></script>
